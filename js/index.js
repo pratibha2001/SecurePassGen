@@ -35,6 +35,7 @@ const generatePassword = (password ="")=>{
     }
     passBox.innerText = truncateString(password, totalChar.value);
     console.log(password);
+    navigator.clipboard.writeText(password);
 }
 
 generatePassword();
@@ -44,7 +45,7 @@ document.getElementById("btn").addEventListener("click",function(){
 })
 
 
-//truncate the password if it has become more than the erequired length
+//truncate the password if it has become more than the required length
 function truncateString(str, num) {
     if (str.length > num) {
         let subStr = str.substring(0, num);
